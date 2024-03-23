@@ -1,0 +1,8 @@
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['pull', 'gcr.io/$karm-devops/gcr.io/karm-devops/flask-app:v1:latest']
+
+ 
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['compute', 'instances', 'update-container', 'kaur-instance','--zone', 'us-central1',
+'--container-image', 'gcr.io/$karm-devops/gcr.io/karm-devops/flask-app:v1:latest']
